@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Sayangku💗</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+background:#f7d6dc;
+font-family:'Fredoka',sans-serif;
+overflow-x:hidden;
+overflow-y:auto;
+}
+
+.page{
+  display:none;
+  width:100%;
+  height:100vh;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  text-align:center;
+}
+
+.birthday-letter{
+max-height:80vh;
+overflow-y:auto;
+}
+
+.page.active{
+  display:flex;
+}
+
+.card{
+  max-width:420px;
+  width:100%;
+}
+
+.title{
+  font-family:'Baloo 2',cursive;
+  color:#a62d58;
+  font-size:2rem;
+  margin-bottom:15px;
+  line-height:1.3;
+}
+
+.text{
+  color:#b15f7b;
+  line-height:1.8;
+  margin-bottom:25px;
+}
+
+.btn{
+  background:#980038;
+  color:white;
+  border:none;
+  padding:14px 35px;
+  border-radius:999px;
+  cursor:pointer;
+  font-family:'Fredoka',sans-serif;
+  font-weight:600;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+}
+
+.calendar-img{
+  width:260px;
+  display:block;
+  margin:0 auto 20px;
+  animation:float 3s infinite ease-in-out;
+}
+
+.character-img{
+  width:180px;
+  display:block;
+  margin:0 auto 20px;
+  animation:float 3s infinite ease-in-out;
+}
+
+.envelope-img{
+  width:220px;
+  display:block;
+  margin:0 auto 20px;
+  animation:float 3s infinite ease-in-out;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto 20px;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 18px;
+  display: block;
+}
+
+.letter{
+  background:white;
+  padding:20px;
+  border-radius:20px;
+  text-align:left;
+  max-height:300px;
+  overflow:auto;
+  color:#8c4a65;
+  line-height:2;
+}
+
+.hearts{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+.heart{
+  position:absolute;
+  animation:fall linear forwards;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0);}
+}
+
+@keyframes fall{
+  from{
+    transform:translateY(-50px);
+    opacity:1;
+  }
+  to{
+    transform:translateY(100vh);
+    opacity:0;
+  }
+}
+
+.birthday-letter{
+width:100%;
+max-width:700px;
+padding:20px;
+}
+
+.final-title{
+font-family:'Baloo 2',cursive;
+font-size:2rem;
+line-height:1.4;
+color:#a62d58;
+margin-bottom:30px;
+}
+
+.letter-content{
+border-left:4px solid #d67c9d;
+padding-left:20px;
+text-align:left;
+}
+
+#typing-text{
+white-space:pre-line;
+font-size:1rem;
+line-height:2;
+color:#8c4a65;
+}
+
+.cursor{
+animation:blink .8s infinite;
+}
+
+@keyframes blink{
+50%{
+opacity:0;
+}
+}
+
+/* PAGE 2 */
+.page .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 22px;
+}
+
+.calendar-img {
+    width: 170px;
+    max-width: 70%;
+    margin-bottom: 18px;
+    animation: floatCalendar 3s ease-in-out infinite;
+}
+
+.title {
+    margin: 0;
+    font-size: 25px;
+    line-height: 1.35;
+    font-weight: 700;
+}
+
+.title span {
+    display: block;
+    margin-top: 4px;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.text {
+    margin: 12px 0 22px;
+    font-size: 14px;
+    opacity: .75;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 11px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: .25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+@keyframes floatCalendar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+@media (max-width: 480px) {
+
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    padding: 0 5px;
+  }
+
+  .gallery img {
+    aspect-ratio: 3 / 4;
+    border-radius: 16px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+  <audio id="bgMusic" loop>
+  <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<div class="hearts"></div>
+
+<!-- PAGE 1 -->
+<div class="page active">
+  <div class="card">
+
+    <img src="box.gif" class="calendar-img">
+
+    <button class="btn" onclick="nextPage()">
+      open <3
+    </button>
+
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <div class="card">
+
+    <img 
+      src="kalender.png" 
+      alt="Calendar" 
+      class="calendar-img"
+    >
+
+    <h1 class="title">
+      Happy Birthday, Sayang!!
+     
+    </h1>
+
+    <p class="text">
+      special for you 💐
+    </p>
+
+    <button 
+      class="btn" 
+      onclick="nextPage()"
+    >
+      tap &lt;3
+    </button>
+
+  </div>
+</div>>
+
+
+<!-- PAGE 3 -->
+<div class="page">
+  <div class="card">
+
+    <img src="icon4.gif" class="character-img">
+
+    <p class="text">
+      Terimakasih telah hadir untuk ku dan menjadi bagian indah dalam duniaku
+    </p>
+
+    <button class="btn" onclick="nextPage()">
+     ♡
+    </button>
+
+  </div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page">
+  <div class="card">
+
+    <img src="icon5.gif" class="character-img">
+
+    <h1 class="title">
+15 TAHUN!!!
+    </h1>
+
+   <p class="text">
+  Selamat ulang tahun yaa. Semoga di usia yang baru ini, kamu selalu dikelilingi hal-hal baik, dimudahkan dalam setiap langkah, dan bisa mencapai apa yang kamu inginkan. Semoga hari-hari ke depannya dipenuhi lebih banyak kebahagiaan dan cerita indah. 🤍
+</p>
+
+    <button class="btn" onclick="nextPage()">
+      tap <3
+    </button>
+
+  </div>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page">
+  <div class="card">
+
+    <div class="gallery">
+      <img src="foto1.jpg">
+      <img src="foto2.jpg">
+      <img src="foto3.jpg">
+      <img src="foto4.jpg">
+    </div>
+
+    <button class="btn" onclick="nextPage()">
+    ♡
+    </button>
+
+  </div>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page">
+  <div class="card">
+
+    <img src="amplop.gif" class="envelope-img">
+
+    <p class="text">
+      Kamu adalah wanita favorit ku, yang ku cintai tanpa kesengajaan namun begitu besar dan dalam.
+    </p>
+
+    <button class="btn" onclick="nextPage()">
+      open
+    </button>
+
+  </div>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page">
+
+    <div class="birthday-letter">
+
+        <h1 class="final-title">
+            🎀 HAPPYY BIRTHDAY 🎀  <br>
+            SAYANGGG <br>
+            ₍˶ᵔ ᵕ ᵔ˶₎♡
+        </h1>
+
+    <div class="letter-content">
+<p id="typing-text"></p>
+</div>
+
+<br>
+
+<button class="btn" onclick="nextPage()">
+♡
+</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- PAGE 8 -->
+<div class="page">
+  <div class="card">
+
+    <img src="icon3.gif" class="character-img">
+
+    <p class="text">
+      Thank you for being there, thank you for being a special person in my life, 
+      thank you for all the happiness I feel with you.
+    </p>
+
+  </div>
+</div>
+
+<script>
+
+const bgMusic = document.getElementById("bgMusic");
+
+document.addEventListener("click", () => {
+    bgMusic.play();
+}, { once: true });
+
+
+const birthdayMessage = `Happy birthday, sayang. 🤍
+Hari ini adalah hari spesial, karena hari ini seseorang yang sangat berarti buat aku bertambah satu tahun lagi. Aku bersyukur bisa mengenal kamu, bisa menjadi bagian dari cerita kamu, dan bisa melewati banyak hal bersama kamu sampai sejauh ini.
+Di usia kamu yang baru ini, aku berharap semoga semua hal baik selalu datang ke hidup kamu. Semoga apa pun yang sedang kamu usahakan bisa berjalan dengan lancar, satu per satu keinginan kamu bisa tercapai, dan setiap langkah yang kamu ambil selalu membawa kamu ke tempat yang lebih baik.
+Aku juga berharap kamu selalu diberikan kesehatan, kebahagiaan, dan orang-orang yang tulus menyayangi kamu. Kalau nanti ada hari-hari yang terasa berat, semoga kamu selalu punya alasan untuk tetap bertahan dan percaya kalau semuanya akan baik-baik saja pada waktunya.
+Terima kasih sudah menjadi diri kamu sendiri. Terima kasih untuk semua cerita, perhatian, waktu, dan hal-hal kecil yang mungkin terlihat sederhana, tapi sebenarnya berarti banyak buat aku. Aku mungkin nggak selalu bisa mengungkapkan semuanya dengan baik, tapi aku benar-benar menghargai kehadiran kamu di hidup aku.
+Aku nggak berharap kamu menjadi seseorang yang sempurna. Aku cuma berharap kamu tetap menjadi kamu yang aku kenal, terus bertumbuh, terus belajar, dan terus mengejar hal-hal yang kamu inginkan. Jangan terlalu keras sama diri sendiri, ya. Kamu sudah melakukan banyak hal sampai di titik ini, dan itu juga sesuatu yang patut kamu banggakan.
+Semoga di umur yang baru ini ada lebih banyak hal yang bisa kamu syukuri, lebih banyak alasan untuk tersenyum, lebih banyak mimpi yang bisa diwujudkan, dan lebih banyak momen yang nantinya bisa kita ingat bersama.
+Sekali lagi, happy birthday. Semoga tahun ini menjadi salah satu tahun terbaik buat kamu. Semoga semua doa baik yang kamu simpan dalam hati bisa menemukan jalannya masing-masing. Dan semoga aku masih bisa menjadi salah satu orang yang menemani kamu melewati banyak hari, bukan hanya di hari ulang tahun kamu, tapi juga di hari-hari biasa setelahnya.`;
+
+let typingStarted = false;
+
+function startTyping(){
+
+if(typingStarted) return;
+
+typingStarted = true;
+
+const target =
+document.getElementById("typing-text");
+
+let i = 0;
+
+function type(){
+
+if(i < birthdayMessage.length){
+
+target.innerHTML =
+birthdayMessage.substring(0,i+1) +
+'<span class="cursor">|</span>';
+
+i++;
+
+setTimeout(type,20);
+
+}else{
+
+target.innerHTML =
+birthdayMessage;
+
+}
+
+}
+
+type();
+
+}
+
+let current = 0;
+const pages = document.querySelectorAll(".page");
+
+function nextPage(){
+
+  pages[current].classList.remove("active");
+
+  current++;
+
+  if(current >= pages.length){
+    current = pages.length - 1;
+  }
+
+  pages[current].classList.add("active");
+
+  if(current === 6){
+    setTimeout(startTyping,500);
+  }
+
+}
+
+const emojis = ["💗","🎀","🌹"];
+
+setInterval(()=>{
+
+  const heart = document.createElement("div");
+
+  heart.className = "heart";
+
+  heart.innerHTML =
+  emojis[Math.floor(Math.random()*emojis.length)];
+
+  heart.style.left =
+  Math.random()*100 + "vw";
+
+  heart.style.fontSize =
+  (15 + Math.random()*20) + "px";
+
+  heart.style.animationDuration =
+  (4 + Math.random()*4) + "s";
+
+  document
+  .querySelector(".hearts")
+  .appendChild(heart);
+
+  setTimeout(()=>{
+    heart.remove();
+  },8000);
+
+},300);
+
+</script>
+
+</body>
+</html>
+
